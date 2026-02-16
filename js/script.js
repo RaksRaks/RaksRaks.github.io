@@ -190,3 +190,24 @@ projectCards.forEach(card => {
 console.log('%c👋 Welcome to Moloko Rakumako\'s Portfolio!', 'color: #6F4E37; font-size: 20px; font-weight: bold;');
 console.log('%cInterested in working together? Let\'s connect!', 'color: #A0826D; font-size: 14px;');
 console.log('%c📧 mraksunator@gmail.com', 'color: #F5E6D3; font-size: 12px;');
+
+// Project Details Toggle
+const detailButtons = document.querySelectorAll('.btn-details');
+
+detailButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const projectCard = this.closest('.project-card');
+        const details = projectCard.querySelector('.project-details');
+        
+        // Toggle active class
+        this.classList.toggle('active');
+        details.classList.toggle('active');
+        
+        // Update button text
+        if (details.classList.contains('active')) {
+            this.innerHTML = 'Hide Details <i class="fas fa-chevron-up"></i>';
+        } else {
+            this.innerHTML = 'Show Details <i class="fas fa-chevron-down"></i>';
+        }
+    });
+});

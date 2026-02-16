@@ -279,12 +279,24 @@
                         Built time-series ML models achieving 95%+ accuracy for hourly electricity 
                         demand prediction using XGBoost, Random Forest, and LSTM networks with 38+ engineered features.
                     </p>
+                    <div class="project-details">
+                        <h4>Technical Approach:</h4>
+                        <ul>
+                            <li>Engineered 38+ features including lag variables, rolling statistics (mean, std, min, max), and temporal patterns from 8,760+ hours of consumption data</li>
+                            <li>Implemented LSTM neural network using TensorFlow for deep learning comparison with classical ML approaches</li>
+                            <li>Created cyclical encoding for temporal features (hour, day of week) to capture periodic patterns</li>
+                            <li>Performed comprehensive model evaluation using MAE, RMSE, and MAPE metrics</li>
+                        </ul>
+                        <h4>Business Value:</h4>
+                        <p>Enables optimized generation scheduling and capacity planning for power grid operators, supporting proactive load management and reducing operational costs.</p>
+                    </div>
                     <div class="project-tags">
                         <span>Python</span>
                         <span>XGBoost</span>
                         <span>TensorFlow</span>
                         <span>Time-Series</span>
                     </div>
+                    <button class="btn-details">Show Details <i class="fas fa-chevron-down"></i></button>
                     <a href="https://github.com/RaksRaks/electricity-demand-forecasting" target="_blank" class="project-link">
                         View on GitHub <i class="fas fa-arrow-right"></i>
                     </a>
@@ -301,12 +313,24 @@
                         Developed classification model achieving 96% accuracy and 0.99 ROC-AUC for 
                         predicting equipment failures using SMOTE, handling severely imbalanced datasets with 73+ features.
                     </p>
+                    <div class="project-details">
+                        <h4>Technical Approach:</h4>
+                        <ul>
+                            <li>Handled severely imbalanced dataset (10% failure rate) using SMOTE oversampling and class weighting techniques</li>
+                            <li>Engineered 73+ features from sensor data including rolling statistics, degradation indicators, and sensor interaction ratios</li>
+                            <li>Implemented feature importance analysis using SHAP values identifying top failure indicators (vibration: 25%, temperature: 12%)</li>
+                            <li>Achieved 86% recall on failure class, minimizing false negatives critical for safety</li>
+                        </ul>
+                        <h4>Business Value:</h4>
+                        <p>Reduces unplanned downtime by 30%+, enables proactive maintenance scheduling, and extends equipment lifespan through early failure detection.</p>
+                    </div>
                     <div class="project-tags">
                         <span>Python</span>
                         <span>Scikit-learn</span>
                         <span>SMOTE</span>
                         <span>SHAP</span>
                     </div>
+                    <button class="btn-details">Show Details <i class="fas fa-chevron-down"></i></button>
                     <a href="https://github.com/RaksRaks/predictive-maintenance-power-equipment" target="_blank" class="project-link">
                         View on GitHub <i class="fas fa-arrow-right"></i>
                     </a>
@@ -323,12 +347,24 @@
                         Implemented unsupervised anomaly detection system using autoencoder neural 
                         networks achieving 96% accuracy with perfect recall, enabling early fault identification.
                     </p>
+                    <div class="project-details">
+                        <h4>Technical Approach:</h4>
+                        <ul>
+                            <li>Designed deep autoencoder architecture (input → 64 → 32 → 5 bottleneck → 32 → 64 → output) using TensorFlow/Keras</li>
+                            <li>Trained model exclusively on normal operational data to learn baseline patterns and detect deviations</li>
+                            <li>Achieved perfect recall (100%) on anomalies with clear separation between normal and anomalous patterns</li>
+                            <li>Implemented automated threshold determination using 95th percentile of training reconstruction errors</li>
+                        </ul>
+                        <h4>Business Value:</h4>
+                        <p>Enables early identification of abnormal operational patterns without requiring labeled failure data, supporting predictive maintenance strategies and reducing system downtime.</p>
+                    </div>
                     <div class="project-tags">
                         <span>Python</span>
                         <span>TensorFlow</span>
                         <span>Keras</span>
                         <span>Autoencoders</span>
                     </div>
+                    <button class="btn-details">Show Details <i class="fas fa-chevron-down"></i></button>
                     <a href="https://github.com/RaksRaks/fault-detection-deep-learning" target="_blank" class="project-link">
                         View on GitHub <i class="fas fa-arrow-right"></i>
                     </a>
@@ -345,12 +381,24 @@
                         Analyzed demographic and health data using statistical modeling in R. Built and compared 
                         multiple classification models following CRISP-DM methodology for structured delivery.
                     </p>
+                    <div class="project-details">
+                        <h4>Technical Approach:</h4>
+                        <ul>
+                            <li>Applied comprehensive data cleaning, feature engineering, and exploratory data analysis techniques on population survey data</li>
+                            <li>Built and compared multiple classification models (Logistic Regression, Decision Trees, Random Forest, Naive Bayes)</li>
+                            <li>Performed feature selection and model evaluation using cross-validation and performance metrics</li>
+                            <li>Created comprehensive data visualizations and statistical reports for stakeholder presentation</li>
+                        </ul>
+                        <h4>Business Value:</h4>
+                        <p>Demonstrated end-to-end data science workflow from data understanding to model deployment, providing insights into health patterns for policy-making and resource allocation.</p>
+                    </div>
                     <div class="project-tags">
                         <span>R</span>
                         <span>Statistical Analysis</span>
                         <span>Random Forest</span>
                         <span>CRISP-DM</span>
                     </div>
+                    <button class="btn-details">Show Details <i class="fas fa-chevron-down"></i></button>
                     <a href="https://github.com/RaksRaks" target="_blank" class="project-link">
                         View on GitHub <i class="fas fa-arrow-right"></i>
                     </a>
@@ -367,12 +415,24 @@
                         Built ML classification models to predict customer credit default risk for financial institutions. 
                         Handled class imbalance and optimized for precision-recall tradeoff based on business requirements.
                     </p>
+                    <div class="project-details">
+                        <h4>Technical Approach:</h4>
+                        <ul>
+                            <li>Performed feature engineering on financial transaction data, customer demographics, and credit history</li>
+                            <li>Implemented multiple classification algorithms (Logistic Regression, Random Forest, Gradient Boosting) and compared performance</li>
+                            <li>Handled class imbalance using resampling techniques and cost-sensitive learning</li>
+                            <li>Optimized models for precision-recall tradeoff based on business cost of false positives vs false negatives</li>
+                        </ul>
+                        <h4>Business Value:</h4>
+                        <p>Supports lending decisions, risk management strategies, and regulatory compliance by accurately identifying high-risk customers while minimizing false rejections.</p>
+                    </div>
                     <div class="project-tags">
                         <span>Python</span>
                         <span>Scikit-learn</span>
                         <span>FinTech</span>
                         <span>Risk Management</span>
                     </div>
+                    <button class="btn-details">Show Details <i class="fas fa-chevron-down"></i></button>
                     <a href="https://github.com/RaksRaks" target="_blank" class="project-link">
                         View on GitHub <i class="fas fa-arrow-right"></i>
                     </a>
@@ -389,12 +449,24 @@
                         Developed transaction monitoring system for Anti-Money Laundering compliance. 
                         Applied rule-based and ML approaches to detect suspicious transaction patterns.
                     </p>
+                    <div class="project-details">
+                        <h4>Technical Approach:</h4>
+                        <ul>
+                            <li>Designed hybrid system combining rule-based detection (threshold alerts) with ML-based anomaly detection</li>
+                            <li>Implemented transaction pattern analysis to identify structuring, rapid movement, and unusual behavior</li>
+                            <li>Applied unsupervised learning techniques to detect novel suspicious patterns not covered by rules</li>
+                            <li>Created risk scoring system for transaction prioritization and investigation workflow</li>
+                        </ul>
+                        <h4>Business Value:</h4>
+                        <p>Supports regulatory compliance (FICA, FATF), reduces financial crime risk, and enables efficient investigation of suspicious activities while minimizing false positives.</p>
+                    </div>
                     <div class="project-tags">
                         <span>Python</span>
                         <span>AML</span>
                         <span>Compliance</span>
                         <span>Anomaly Detection</span>
                     </div>
+                    <button class="btn-details">Show Details <i class="fas fa-chevron-down"></i></button>
                     <a href="https://github.com/RaksRaks" target="_blank" class="project-link">
                         View on GitHub <i class="fas fa-arrow-right"></i>
                     </a>
