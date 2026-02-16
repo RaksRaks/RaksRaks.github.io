@@ -120,70 +120,140 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <div class="section-label">PROJECTS</div>
+            <h2 class="section-title">Featured Work</h2>
             <div class="projects-grid">
                 <!-- Project 1 -->
                 <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/electricity-forecasting.jpg" alt="Electricity Demand Forecasting">
+                    <div class="project-icon">
+                        <i class="fas fa-chart-line"></i>
                     </div>
                     <div class="project-content">
                         <h3>Electricity Demand Forecasting</h3>
+                        <p class="project-category">Machine Learning & Time-Series Project</p>
                         <p>Time-series ML models achieving 95%+ accuracy for hourly electricity demand prediction using XGBoost, Random Forest, and LSTM networks.</p>
+                        
+                        <button class="show-details-btn" onclick="toggleDetails('project1')">
+                            Show details <i class="fas fa-chevron-down"></i>
+                        </button>
+                        
+                        <div class="project-details" id="project1">
+                            <ul>
+                                <li>Built time-series ML models to forecast hourly electricity demand with 95%+ accuracy</li>
+                                <li>Engineered 38+ features including lag variables, rolling statistics, and temporal patterns from 8,760+ hours of data</li>
+                                <li>Implemented LSTM neural network for deep learning comparison with classical ML approaches</li>
+                                <li>Performed comprehensive model evaluation using MAE, RMSE, and MAPE metrics</li>
+                                <li>Developed complete data processing pipeline including missing value handling and feature scaling</li>
+                            </ul>
+                        </div>
+                        
                         <div class="project-tags">
                             <span class="tag">Python</span>
                             <span class="tag">XGBoost</span>
                             <span class="tag">TensorFlow</span>
                             <span class="tag">Time-Series</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/RaksRaks/electricity-demand-forecasting" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
+                            <span class="tag">Feature Engineering</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
                 <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/predictive-maintenance.jpg" alt="Predictive Maintenance">
+                    <div class="project-icon">
+                        <i class="fas fa-tools"></i>
                     </div>
                     <div class="project-content">
                         <h3>Predictive Maintenance for Power Equipment</h3>
+                        <p class="project-category">Classification & Imbalanced Data Project</p>
                         <p>Classification model achieving 96% accuracy and 0.99 ROC-AUC for predicting equipment failures using SMOTE and feature importance analysis.</p>
+                        
+                        <button class="show-details-btn" onclick="toggleDetails('project2')">
+                            Show details <i class="fas fa-chevron-down"></i>
+                        </button>
+                        
+                        <div class="project-details" id="project2">
+                            <ul>
+                                <li>Developed binary classification model achieving 96% accuracy and 0.99 ROC-AUC</li>
+                                <li>Handled severely imbalanced dataset (10% failure rate) using SMOTE oversampling techniques</li>
+                                <li>Engineered 73+ features from sensor data including rolling statistics and degradation indicators</li>
+                                <li>Implemented feature importance analysis using SHAP values to identify top failure indicators</li>
+                                <li>Created risk scoring system that identified high-risk equipment with 81.5% failure probability</li>
+                            </ul>
+                        </div>
+                        
                         <div class="project-tags">
                             <span class="tag">Python</span>
                             <span class="tag">Scikit-learn</span>
                             <span class="tag">SMOTE</span>
                             <span class="tag">SHAP</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/RaksRaks/predictive-maintenance-power-equipment" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
+                            <span class="tag">Random Forest</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
                 <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/fault-detection.jpg" alt="Fault Detection">
+                    <div class="project-icon">
+                        <i class="fas fa-brain"></i>
                     </div>
                     <div class="project-content">
                         <h3>Fault Detection Using Deep Learning</h3>
+                        <p class="project-category">Unsupervised Anomaly Detection Project</p>
                         <p>Unsupervised anomaly detection system using autoencoder neural networks achieving 96% accuracy with perfect recall on anomalies.</p>
+                        
+                        <button class="show-details-btn" onclick="toggleDetails('project3')">
+                            Show details <i class="fas fa-chevron-down"></i>
+                        </button>
+                        
+                        <div class="project-details" id="project3">
+                            <ul>
+                                <li>Implemented unsupervised anomaly detection system using autoencoder neural networks</li>
+                                <li>Designed and trained deep autoencoder architecture using TensorFlow/Keras</li>
+                                <li>Achieved perfect recall (100%) on anomalies with clear separation between normal and anomalous patterns</li>
+                                <li>Implemented automated threshold determination using 95th percentile of training reconstruction errors</li>
+                                <li>Designed real-time fault detection pipeline with anomaly scoring and ranking system</li>
+                            </ul>
+                        </div>
+                        
                         <div class="project-tags">
                             <span class="tag">Python</span>
                             <span class="tag">TensorFlow</span>
                             <span class="tag">Keras</span>
                             <span class="tag">Autoencoders</span>
+                            <span class="tag">Deep Learning</span>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/RaksRaks/fault-detection-deep-learning" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Health and Demographic Patterns in South Africa</h3>
+                        <p class="project-category">Academic Data Science Project</p>
+                        <p>Analyzed demographic and health data from South African population surveys using statistical modeling and multiple classification algorithms.</p>
+                        
+                        <button class="show-details-btn" onclick="toggleDetails('project4')">
+                            Show details <i class="fas fa-chevron-down"></i>
+                        </button>
+                        
+                        <div class="project-details" id="project4">
+                            <ul>
+                                <li>Analyzed demographic and health data from South African population surveys</li>
+                                <li>Applied comprehensive data cleaning, feature engineering, and exploratory data analysis</li>
+                                <li>Built and compared multiple classification models (Logistic Regression, Decision Trees, Random Forest, Naive Bayes)</li>
+                                <li>Created comprehensive data visualizations and statistical reports for stakeholder presentation</li>
+                                <li>Demonstrated end-to-end data science workflow from data understanding to model deployment</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="tag">R</span>
+                            <span class="tag">Statistical Analysis</span>
+                            <span class="tag">Data Visualization</span>
+                            <span class="tag">Classification</span>
                         </div>
                     </div>
                 </div>
@@ -194,81 +264,202 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3><i class="fas fa-brain"></i> Machine Learning & AI</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Scikit-learn</span>
-                        <span class="skill-item">XGBoost</span>
-                        <span class="skill-item">TensorFlow</span>
-                        <span class="skill-item">Keras</span>
-                        <span class="skill-item">PyTorch</span>
-                        <span class="skill-item">Deep Learning</span>
-                        <span class="skill-item">Time-Series</span>
-                        <span class="skill-item">Classification</span>
+            <div class="section-label">SKILLS</div>
+            <h2 class="section-title">Technical Expertise</h2>
+            
+            <div class="skill-tabs">
+                <button class="skill-tab active" data-category="all">All</button>
+                <button class="skill-tab" data-category="programming">Programming</button>
+                <button class="skill-tab" data-category="ml">ML & AI</button>
+                <button class="skill-tab" data-category="data">BI & Analytics</button>
+                <button class="skill-tab" data-category="cloud">Cloud</button>
+                <button class="skill-tab" data-category="testing">Data Eng</button>
+            </div>
+
+            <div class="skills-bars">
+                <div class="skills-column">
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">C#</span>
+                            <span class="skill-percentage">50%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 50%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">Scikit-learn</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">TensorFlow</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">Azure</span>
+                            <span class="skill-percentage">60%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 60%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">ETL Pipelines</span>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 70%"></div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <h3><i class="fas fa-chart-line"></i> Data Science</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">Pandas</span>
-                        <span class="skill-item">NumPy</span>
-                        <span class="skill-item">R</span>
-                        <span class="skill-item">SQL</span>
-                        <span class="skill-item">Statistical Analysis</span>
-                        <span class="skill-item">Data Visualization</span>
-                        <span class="skill-item">Feature Engineering</span>
+                <div class="skills-column">
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">SQL</span>
+                            <span class="skill-percentage">88%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 88%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">Power BI & DAX</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">XGBoost / Random Forest</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">Deep Learning</span>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 70%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">Git & GitHub</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">Data Warehousing</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 75%"></div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Programming</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">R</span>
-                        <span class="skill-item">C#</span>
-                        <span class="skill-item">SQL</span>
-                        <span class="skill-item">Git</span>
-                        <span class="skill-item">GitHub</span>
-                        <span class="skill-item">OOP</span>
+                <div class="skills-column">
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">R</span>
+                            <span class="skill-percentage">60%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 60%"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="skill-category">
-                    <h3><i class="fas fa-vial"></i> Testing & QA</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">JIRA</span>
-                        <span class="skill-item">Selenium</span>
-                        <span class="skill-item">Postman</span>
-                        <span class="skill-item">API Testing</span>
-                        <span class="skill-item">Regression Testing</span>
-                        <span class="skill-item">Agile/Scrum</span>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">Executive Dashboards</span>
+                            <span class="skill-percentage">82%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 82%"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="skill-category">
-                    <h3><i class="fas fa-cloud"></i> Cloud & Tools</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Azure</span>
-                        <span class="skill-item">Power BI</span>
-                        <span class="skill-item">Jupyter</span>
-                        <span class="skill-item">VS Code</span>
-                        <span class="skill-item">Matplotlib</span>
-                        <span class="skill-item">Seaborn</span>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">Feature Engineering</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 85%"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="skill-category">
-                    <h3><i class="fas fa-university"></i> FinTech</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Digital Banking</span>
-                        <span class="skill-item">AML</span>
-                        <span class="skill-item">Credit Risk</span>
-                        <span class="skill-item">Transaction Monitoring</span>
-                        <span class="skill-item">Ethical AI</span>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">JIRA / Agile</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">Selenium / Postman</span>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 70%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">Statistical Analysis</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 80%"></div>
+                        </div>
                     </div>
                 </div>
             </div>

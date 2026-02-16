@@ -135,3 +135,33 @@ window.addEventListener('load', () => {
 });
 
 console.log('Portfolio website loaded successfully!');
+
+
+// Toggle project details
+function toggleDetails(projectId) {
+    const details = document.getElementById(projectId);
+    const button = details.previousElementSibling;
+    
+    details.classList.toggle('active');
+    button.classList.toggle('active');
+    
+    if (details.classList.contains('active')) {
+        button.innerHTML = 'Hide details <i class="fas fa-chevron-up"></i>';
+    } else {
+        button.innerHTML = 'Show details <i class="fas fa-chevron-down"></i>';
+    }
+}
+
+// Skill tabs functionality
+document.querySelectorAll('.skill-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.skill-tab').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Filter skills based on category (you can implement this if needed)
+        const category = this.getAttribute('data-category');
+        console.log('Selected category:', category);
+    });
+});
