@@ -1,22 +1,6 @@
-// Mobile Navigation Toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
+// Portfolio JavaScript - Cappuccino Theme
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
-
-// Close mobile menu when clicking on a link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
-    });
-});
-
-// Smooth scrolling for navigation links
+// Smooth Scroll Navigation
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -30,138 +14,179 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar background change on scroll
+// Navbar Scroll Effect
+const navbar = document.getElementById('navbar');
+let lastScroll = 0;
+
 window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 100) {
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+        navbar.classList.remove('scrolled');
     }
+    
+    lastScroll = currentScroll;
 });
 
-// Intersection Observer for fade-in animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+// Active Navigation Link
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Hamburger Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
+
+// Close menu when clicking on a link
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
+});
+
+// Animated Counter for Stats
+const animateCounter = (element, target, duration = 2000) => {
+    let start = 0;
+    const increment = target / (duration / 16);
+    
+    const updateCounter = () => {
+        start += increment;
+        if (start < target) {
+            element.textContent = Math.floor(start);
+            requestAnimationFrame(updateCounter);
+        } else {
+            element.textContent = target;
+        }
+    };
+    
+    updateCounter();
 };
 
-const observer = new IntersectionObserver((entries) => {
+// Intersection Observer for Stats Animation
+const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            const statNumbers = entry.target.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-target'));
+                animateCounter(stat, target);
+            });
+            statsObserver.unobserve(entry.target);
         }
     });
-}, observerOptions);
+}, { threshold: 0.5 });
 
-// Observe all sections and cards
-document.querySelectorAll('section, .project-card, .skill-category, .timeline-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
+const aboutSection = document.querySelector('.about-stats');
+if (aboutSection) {
+    statsObserver.observe(aboutSection);
+}
+
+// Scroll Reveal Animation
+const revealElements = document.querySelectorAll('.skill-card, .project-card, .timeline-item, .contact-item');
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }, index * 100);
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+revealElements.forEach(element => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(30px)';
+    element.style.transition = 'all 0.6s ease';
+    revealObserver.observe(element);
 });
 
-// Active navigation link highlighting
-const sections = document.querySelectorAll('section[id]');
-
-function highlightNavigation() {
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLink?.classList.add('active');
-        } else {
-            navLink?.classList.remove('active');
-        }
-    });
-}
-
-window.addEventListener('scroll', highlightNavigation);
-
-// Add active class styling
-const style = document.createElement('style');
-style.textContent = `
-    .nav-link.active {
-        color: var(--primary-color);
-        position: relative;
-    }
-    .nav-link.active::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: var(--primary-color);
-    }
-`;
-document.head.appendChild(style);
-
-// Typing effect for hero subtitle (optional enhancement)
-const heroSubtitle = document.querySelector('.hero-subtitle');
-if (heroSubtitle) {
-    const text = heroSubtitle.textContent;
-    heroSubtitle.textContent = '';
-    let i = 0;
-
-    function typeWriter() {
-        if (i < text.length) {
-            heroSubtitle.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 50);
-        }
-    }
-
-    // Start typing effect after page load
-    window.addEventListener('load', () => {
-        setTimeout(typeWriter, 500);
-    });
-}
-
-// Add loading animation
-window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    document.body.style.transition = 'opacity 0.5s ease';
-    setTimeout(() => {
-        document.body.style.opacity = '1';
-    }, 100);
-});
-
-console.log('Portfolio website loaded successfully!');
-
-
-// Toggle project details
-function toggleDetails(projectId) {
-    const details = document.getElementById(projectId);
-    const button = details.previousElementSibling;
+// Particle Animation
+const createParticles = () => {
+    const animatedBg = document.querySelector('.animated-bg');
+    const particleCount = 50;
     
-    details.classList.toggle('active');
-    button.classList.toggle('active');
-    
-    if (details.classList.contains('active')) {
-        button.innerHTML = 'Hide details <i class="fas fa-chevron-up"></i>';
-    } else {
-        button.innerHTML = 'Show details <i class="fas fa-chevron-down"></i>';
-    }
-}
-
-// Skill tabs functionality
-document.querySelectorAll('.skill-tab').forEach(tab => {
-    tab.addEventListener('click', function() {
-        // Remove active class from all tabs
-        document.querySelectorAll('.skill-tab').forEach(t => t.classList.remove('active'));
-        // Add active class to clicked tab
-        this.classList.add('active');
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
         
-        // Filter skills based on category (you can implement this if needed)
-        const category = this.getAttribute('data-category');
-        console.log('Selected category:', category);
+        const size = Math.random() * 4 + 2;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+        
+        const duration = Math.random() * 10 + 15;
+        particle.style.animationDuration = `${duration}s`;
+        particle.style.animationDelay = `${Math.random() * 5}s`;
+        
+        animatedBg.appendChild(particle);
+    }
+};
+
+createParticles();
+
+// Typing Effect for Hero Roles (Optional Enhancement)
+const roles = document.querySelectorAll('.role-text');
+roles.forEach((role, index) => {
+    role.style.opacity = '0';
+    role.style.transform = 'translateY(20px)';
+    
+    setTimeout(() => {
+        role.style.transition = 'all 0.5s ease';
+        role.style.opacity = '1';
+        role.style.transform = 'translateY(0)';
+    }, 500 + (index * 200));
+});
+
+// Parallax Effect for Hero Image
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const heroImage = document.querySelector('.hero-image');
+    
+    if (heroImage && scrolled < window.innerHeight) {
+        heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
+    }
+});
+
+// Add hover effect to project cards
+const projectCards = document.querySelectorAll('.project-card');
+projectCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transition = 'all 0.3s ease';
     });
 });
+
+// Console Message
+console.log('%c👋 Welcome to Moloko Rakumako\'s Portfolio!', 'color: #6F4E37; font-size: 20px; font-weight: bold;');
+console.log('%cInterested in working together? Let\'s connect!', 'color: #A0826D; font-size: 14px;');
+console.log('%c📧 mraksunator@gmail.com', 'color: #F5E6D3; font-size: 12px;');
