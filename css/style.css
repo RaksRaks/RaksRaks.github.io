@@ -1307,3 +1307,57 @@ section {
 .cert-badge i {
     color: var(--warm-brown);
 }
+
+/* Kaggle Subcourses */
+.cert-card-large {
+    grid-column: span 2;
+}
+
+.cert-subcourses {
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.subcourse-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: rgba(111, 78, 55, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(111, 78, 55, 0.2);
+    transition: all 0.3s ease;
+}
+
+.subcourse-item:hover {
+    background: rgba(111, 78, 55, 0.2);
+    transform: translateX(5px);
+}
+
+.subcourse-item i {
+    color: var(--warm-brown);
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.subcourse-item strong {
+    color: var(--cream);
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.subcourse-item p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+@media (max-width: 968px) {
+    .cert-card-large {
+        grid-column: span 1;
+    }
+}
