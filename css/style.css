@@ -1230,3 +1230,80 @@ section {
 .btn-details.active i {
     transform: rotate(180deg);
 }
+
+/* Certifications Section */
+.certifications {
+    background: var(--dark-bg);
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.cert-card {
+    background: var(--medium-brown);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(111, 78, 55, 0.2);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.cert-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-warm);
+    border-color: var(--warm-brown);
+}
+
+.cert-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: var(--gradient-1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--cream);
+    box-shadow: var(--shadow-warm);
+}
+
+.cert-card h3 {
+    font-size: 1.3rem;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+}
+
+.cert-issuer {
+    color: var(--warm-brown);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.cert-desc {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.cert-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(111, 78, 55, 0.2);
+    padding: 8px 20px;
+    border-radius: 25px;
+    border: 1px solid rgba(111, 78, 55, 0.3);
+    color: var(--light-cream);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.cert-badge i {
+    color: var(--warm-brown);
+}
