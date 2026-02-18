@@ -1,4 +1,4 @@
-# Maloko Rakumako - Portfolio Website
+# Moloko Rakumako - Portfolio Website
 
 Professional portfolio website showcasing my Data Science and Machine Learning projects.
 
@@ -161,7 +161,7 @@ MIT License - Feel free to use this template for your own portfolio
 
 ## Contact
 
-Maloko Gerald Rakumako
+M0loko Gerald Rakumako
 - Email: mraksunator@gmail.com
 - GitHub: [@RaksRaks](https://github.com/RaksRaks)
 - Phone: +27 66 011 6417
