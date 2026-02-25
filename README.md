@@ -4,7 +4,7 @@ Professional portfolio website showcasing my Data Science and Machine Learning p
 
 ## Live Demo
 
-Visit: [https://raksraks.github.io/portfolio](https://raksraks.github.io/portfolio)
+Visit: [https://raksraks.github.io/portfolio](https://raksraks.github.io/)
 
 ## Features
 
