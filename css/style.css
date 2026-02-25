@@ -1310,12 +1310,33 @@ section {
 
 /* Kaggle Subcourses */
 .cert-card-large {
-    grid-column: span 2;
+    grid-column: span 1;
 }
 
 .cert-subcourses {
     margin: 1.5rem 0;
     text-align: left;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.cert-subcourses::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cert-subcourses::-webkit-scrollbar-track {
+    background: rgba(111, 78, 55, 0.1);
+    border-radius: 10px;
+}
+
+.cert-subcourses::-webkit-scrollbar-thumb {
+    background: var(--warm-brown);
+    border-radius: 10px;
+}
+
+.cert-subcourses::-webkit-scrollbar-thumb:hover {
+    background: var(--light-brown);
 }
 
 .subcourse-item {
@@ -1325,7 +1346,7 @@ section {
     background: rgba(111, 78, 55, 0.1);
     padding: 1rem;
     border-radius: 10px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     border: 1px solid rgba(111, 78, 55, 0.2);
     transition: all 0.3s ease;
 }
@@ -1359,5 +1380,9 @@ section {
 @media (max-width: 968px) {
     .cert-card-large {
         grid-column: span 1;
+    }
+    
+    .cert-subcourses {
+        max-height: 300px;
     }
 }
